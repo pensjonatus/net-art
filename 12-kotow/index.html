@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12 kotów</title>
+    <style>
+      html,
+      body,
+      div,
+      span,
+      applet,
+      object,
+      iframe,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      a,
+      abbr,
+      acronym,
+      address,
+      big,
+      cite,
+      code,
+      del,
+      dfn,
+      em,
+      img {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      main {
+        background-image: url(img/bg.jpg);
+        background-size: 372px;
+        height: 100vh;
+      }
+
+      #cat-box {
+        position: relative;
+        width: 80vw;
+        height: 80vw;
+        background-position: center;
+        background-size: cover;
+      }
+
+      #radios input {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="cat-box" class="cat-box">
+        <div id="radios">
+          <input type="radio" name="selected-cat" value="1" id="blue-cat" />
+          <input type="radio" name="selected-cat" value="2" id="bug-cat" />
+          <input type="radio" name="selected-cat" value="3" id="dog-cat" />
+          <input type="radio" name="selected-cat" value="4" id="hang-cat" />
+          <input
+            type="radio"
+            name="selected-cat"
+            value="5"
+            id="ice-cream-cat"
+          />
+          <input type="radio" name="selected-cat" value="6" id="look-cat" />
+          <input type="radio" name="selected-cat" value="7" id="much-cat" />
+          <input type="radio" name="selected-cat" value="8" id="multi-cat" />
+          <input type="radio" name="selected-cat" value="9" id="reach-cat" />
+          <input type="radio" name="selected-cat" value="10" id="red-cat" />
+          <input type="radio" name="selected-cat" value="11" id="tail-cat" />
+          <input type="radio" name="selected-cat" value="12" id="tower-cat" />
+        </div>
+      </div>
+    </main>
+    <script>
+      const radios = document.querySelectorAll('input[type="radio"]');
+      radios.entries().forEach(([key, radio]) => {
+        radio.style.left = key * Math.random() * 100 + "px";
+        radio.style.top = key * Math.random() * 100 + "px";
+        radio.addEventListener("change", (event) => {
+          document.getElementById(
+            "cat-box"
+          ).style.backgroundImage = `url(img/${event.target.id}.jpg)`;
+        });
+      });
+    </script>
+  </body>
+</html>
