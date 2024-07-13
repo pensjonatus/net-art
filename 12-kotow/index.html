@@ -39,7 +39,7 @@
         font: inherit;
         vertical-align: baseline;
       }
-      main {
+      html {
         background-image: url(img/bg.jpg);
         background-size: 372px;
         height: 100vh;
@@ -60,37 +60,34 @@
   </head>
   <body>
     <main>
-      <div id="cat-box" class="cat-box">
-        <div id="radios">
-          <input type="radio" name="selected-cat" value="1" id="blue-cat" />
-          <input type="radio" name="selected-cat" value="2" id="bug-cat" />
-          <input type="radio" name="selected-cat" value="3" id="dog-cat" />
-          <input type="radio" name="selected-cat" value="4" id="hang-cat" />
-          <input
-            type="radio"
-            name="selected-cat"
-            value="5"
-            id="ice-cream-cat"
-          />
-          <input type="radio" name="selected-cat" value="6" id="look-cat" />
-          <input type="radio" name="selected-cat" value="7" id="much-cat" />
-          <input type="radio" name="selected-cat" value="8" id="multi-cat" />
-          <input type="radio" name="selected-cat" value="9" id="reach-cat" />
-          <input type="radio" name="selected-cat" value="10" id="red-cat" />
-          <input type="radio" name="selected-cat" value="11" id="tail-cat" />
-          <input type="radio" name="selected-cat" value="12" id="tower-cat" />
-        </div>
+      <div id="cat-box" class="cat-box"></div>
+      <div id="radios">
+        <input type="radio" name="selected-cat" value="1" id="blue-cat" />
+        <input type="radio" name="selected-cat" value="2" id="bug-cat" />
+        <input type="radio" name="selected-cat" value="3" id="dog-cat" />
+        <input type="radio" name="selected-cat" value="4" id="hang-cat" />
+        <input type="radio" name="selected-cat" value="5" id="ice-cream-cat" />
+        <input type="radio" name="selected-cat" value="6" id="look-cat" />
+        <input type="radio" name="selected-cat" value="7" id="much-cat" />
+        <input type="radio" name="selected-cat" value="8" id="multi-cat" />
+        <input type="radio" name="selected-cat" value="9" id="reach-cat" />
+        <input type="radio" name="selected-cat" value="10" id="red-cat" />
+        <input type="radio" name="selected-cat" value="11" id="tail-cat" />
+        <input type="radio" name="selected-cat" value="12" id="tower-cat" />
       </div>
     </main>
     <script>
-      const radios = document.querySelectorAll('input[type="radio"]');
+      const radios = document.querySelectorAll('#radios input[type="radio"]');
       radios.entries().forEach(([key, radio]) => {
-        radio.style.left = key * Math.random() * 100 + "px";
-        radio.style.top = key * Math.random() * 100 + "px";
+        const x = key * Math.random() * 100 + "px";
+        const y = key * Math.random() * 100 + "px";
+        radio.style.left = x;
+        radio.style.top = y;
         radio.addEventListener("change", (event) => {
-          document.getElementById(
-            "cat-box"
-          ).style.backgroundImage = `url(img/${event.target.id}.jpg)`;
+          const catBox = document.getElementById("cat-box");
+          catBox.style.backgroundImage = `url(img/${event.target.id}.jpg)`;
+          catBox.style.left = x;
+          catBox.style.top = y;
         });
       });
     </script>
