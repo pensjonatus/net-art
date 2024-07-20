@@ -11,20 +11,56 @@
         color: seashell;
       }
 
+      h1 {
+        font-size: 156px;
+        word-break: break-all;
+        padding: 32px;
+      }
+
       #rameczka {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        height: 100vh;
+        height: 90vh;
+        gap: 24px;
+      }
+
+      .środeczek {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid seashell;
+        padding: 13px;
+      }
+
+      #obrazek {
+        width: 90%;
+        height: 90%;
+        filter: invert(1);
+      }
+
+      #narracja {
+        font-size: 32px;
+      }
+
+      #wybory {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+      }
+
+      #wybory button {
+        font-size: 31px;
       }
     </style>
   </head>
   <body>
     <div id="rameczka">
-      <div>Obrazek</div>
-      <div>Narracja</div>
-      <div>Wybory</div>
-      <div><h1>Wezwanie</h1></div>
+      <div class="środeczek"><img id="obrazek" /></div>
+      <div class="środeczek"><div id="narracja"></div></div>
+      <div class="środeczek"><div id="wybory"></div></div>
+      <div class="środeczek"><h1>Wezwanie</h1></div>
     </div>
+    <script src="./js/historyjka.js"></script>
   </body>
 </html>
